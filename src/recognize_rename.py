@@ -7,7 +7,7 @@ def count_file_nums(path):
     total_count = 0
     for root, dirs, files in os.walk(path):
         for file in files:
-            if file.split('.')[-1].upper() == 'MP4':
+            if file.split('.')[-1].upper() == 'MP4' and file[0] != '.':
                 total_count += 1
     return total_count
 
@@ -46,7 +46,7 @@ def start_recognize(dir_path):
     curr_file_index = 0  # 当前操作文件序号
     recognized_file_count = 0  # 本次一共识别的文件数
     unknown_name_count = 0  # 本次识别无结果文件数量
-    unknown_name_start_no = 180  # 用于命名系统音乐时的序号
+    unknown_name_start_no = 207  # 用于命名系统音乐时的序号
 
     for root, dirs, files in os.walk(dir_path):
         for video in files:
@@ -74,4 +74,4 @@ def start_recognize(dir_path):
 
 
 if __name__ == '__main__':
-    start_recognize('C:\\Users\\Amigo\\Desktop\\video')
+    start_recognize('C:\\Users\\Amigo\\Desktop\\8.13')
